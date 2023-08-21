@@ -5,7 +5,8 @@
   "scripts": {
     "packages:install": "npm install sequelize pg && npm install --save-dev sequelize-cli",
     "db:reset": "npx sequelize-cli db:migrate && npx sequelize-cli db:seed:all",
-    "start": "npm run packages:install && npm run db:reset && node ./bin/www"
+    "start": "npm run packages:install && npm run db:reset && node ./bin/www",
+    "deploy": "node ./bin/www"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -15,7 +16,10 @@
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1",
     "mysql2": "^3.6.0",
-    "sequelize": "^6.32.1",
+    "pg": "^8.11.2",
+    "sequelize": "^6.32.1"
+  },
+  "devDependencies": {
     "sequelize-cli": "^6.6.1"
   }
 }
