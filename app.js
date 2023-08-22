@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var express = require('express');
+var cors = require('cors');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var autorRouter = require('./routes/rest_autor')
@@ -12,7 +13,7 @@ var autor_libroRouter = require('./routes/rest_autor_libro')
 var libroRouter = require('./routes/rest_libro')
 
 var app = express();
-
+app.use(cors()); //middleware cors
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
